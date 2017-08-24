@@ -60,4 +60,11 @@ public class Resource {
 
         return "<h2>Updated task " + DBHandler.updateTask(taskObject) + "</h2>";
     }
+
+    @GET
+    @Path("/delete")
+    @Produces(MediaType.TEXT_HTML)
+    public String updateTask(@QueryParam("id") String id) {
+        return "<h2>Deleted task " + DBHandler.deleteTask(id) + "</h2>";
+    }
 }

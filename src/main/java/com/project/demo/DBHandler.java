@@ -141,4 +141,28 @@ public class DBHandler {
         }
         return taskObject;
     }
+
+    static boolean deleteTask(String taskId){
+        Connection connection = null;
+        try {
+            // create a database connection
+            connection = getConnection();
+            Statement statement = createStatement(connection);
+            statement.executeUpdate("DELETE FROM `tasks` WHERE `id`='"+taskId+"'");
+        } catch(SQLException e) {
+            // if the error message is "out of memory",
+            // it probably means no database file is found
+            System.err.println(e.getMessage());
+            return false;
+        } finally {
+            try {
+                if(connection != null)
+                    connection.close();
+            } catch(SQLException e) {
+                // connection close failed.
+                System.err.println(e);
+            }
+        }
+        return true;
+    }
 }

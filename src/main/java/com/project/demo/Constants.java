@@ -163,6 +163,34 @@ class Constants {
             "          }\n" +
             "        }\n" +
             "      }\n" +
+            "    },\n" +
+            "    \"/delete\": {\n" +
+            "      \"get\": {\n" +
+            "        \"tags\": [\n" +
+            "          \"api\"\n" +
+            "        ],\n" +
+            "        \"operationId\": \"updateTask\",\n" +
+            "        \"produces\": [\n" +
+            "          \"text/html\"\n" +
+            "        ],\n" +
+            "        \"parameters\": [\n" +
+            "          {\n" +
+            "            \"name\": \"id\",\n" +
+            "            \"in\": \"query\",\n" +
+            "            \"required\": false,\n" +
+            "            \"type\": \"string\"\n" +
+            "          }\n" +
+            "        ],\n" +
+            "        \"responses\": {\n" +
+            "          \"200\": {\n" +
+            "            \"description\": \"successful operation\",\n" +
+            "            \"schema\": {\n" +
+            "              \"type\": \"string\"\n" +
+            "            },\n" +
+            "            \"headers\": {}\n" +
+            "          }\n" +
+            "        }\n" +
+            "      }\n" +
             "    }\n" +
             "  }\n" +
             "}";
